@@ -31,9 +31,9 @@ const HeroSection = React.memo(() => {
   ): Typed => {
     return new Typed(typedSpanElement.current, {
       strings: TYPED_STRINGS,
-      typeSpeed: 50,
-      backSpeed: 50,
-      backDelay: 8000,
+      typeSpeed: 30,
+      backSpeed: 30,
+      backDelay: 3000,
       loop: true,
     });
   };
