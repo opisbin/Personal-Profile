@@ -40,6 +40,12 @@ export const TYPED_STRINGS = [
   "I design dynamic user experience",
   "I design and develop motion",
 ];
+export const TYPED_HELLO = [
+  "Hello",
+  "你好",
+  "Hola",
+  "Bonjour",
+];
 
 export const EMAIL = "ayush.singh.xda@gmail.com";
 

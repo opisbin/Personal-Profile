@@ -4,7 +4,7 @@
 // This file is licensed under the MIT License.
 // License text available at https://opensource.org/licenses/MIT
 
-import { EMAIL, MENULINKS, SOCIAL_LINKS, TYPED_STRINGS } from "../../constants";
+import { EMAIL, MENULINKS, SOCIAL_LINKS, TYPED_STRINGS, TYPED_HELLO } from "../../constants";
 import React, { MutableRefObject, useEffect, useRef } from "react";
 import Typed from "typed.js";
 import Image from "next/image";
@@ -24,6 +24,7 @@ const HERO_STYLES = {
 
 const HeroSection = React.memo(() => {
   const typedSpanElement: MutableRefObject<HTMLSpanElement> = useRef(null);
+  const typedHelloSpanElement: MutableRefObject<HTMLSpanElement> = useRef(null);
   const targetSection: MutableRefObject<HTMLDivElement> = useRef(null);
 
   const initTypeAnimation = (
@@ -37,6 +38,33 @@ const HeroSection = React.memo(() => {
       loop: true,
     });
   };
+  const initHelloTypeAnimation = (
+    typedSpanElement: MutableRefObject<HTMLSpanElement>
+  ): Typed => {
+    return new Typed(typedSpanElement.current, {
+      strings: TYPED_HELLO,
+      typeSpeed: 30,
+      backSpeed: 30,
+      backDelay: 3000,
+      loop: true,
+    });
+  };
+
+  const initHelloRevealAnimation = (
+    targetSection: MutableRefObject<HTMLDivElement>
+  ): GSAPTimeline => {
+    const revealTl = gsap.timeline({ defaults: { ease: Linear.easeNone } });
+    revealTl
+      .to(targetSection.current, { opacity: 1, duration: 2 })
+      .from(
+        targetSection.current.querySelectorAll(".seq"),
+        { opacity: 100, duration: 0.5, stagger: 0.5 },
+        "<"
+      );
+
+    return revealTl;
+  };
+
 
   const initRevealAnimation = (
     targetSection: MutableRefObject<HTMLDivElement>
@@ -46,12 +74,19 @@ const HeroSection = React.memo(() => {
       .to(targetSection.current, { opacity: 1, duration: 2 })
       .from(
         targetSection.current.querySelectorAll(".seq"),
-        { opacity: 0, duration: 0.5, stagger: 0.5 },
+        { opacity: 100, duration: 0.5, stagger: 0.5 },
         "<"
       );
 
     return revealTl;
   };
+  
+  useEffect(() => {
+    const typed = initHelloTypeAnimation(typedHelloSpanElement);
+    initHelloRevealAnimation(targetSection);
+
+    return typed.destroy;
+  }, [typedHelloSpanElement, targetSection]);
 
   useEffect(() => {
     const typed = initTypeAnimation(typedSpanElement);
@@ -59,6 +94,7 @@ const HeroSection = React.memo(() => {
 
     return typed.destroy;
   }, [typedSpanElement, targetSection]);
+  
 
   const renderBackgroundImage = (): React.ReactNode => (
     <div className={HERO_STYLES.BG_WRAPPER} style={{ maxHeight: "650px" }}>
@@ -82,7 +118,13 @@ const HeroSection = React.memo(() => {
   const renderHeroContent = (): React.ReactNode => (
     <div className={HERO_STYLES.CONTENT}>
       <div className="md:mb-4 mb-2">
-        <h2 className="text-4xl seq">Hello,你好👋🏻</h2>
+        <h2 className="text-4xl seq">
+          <span
+            className={HERO_STYLES.TYPED_SPAN}
+            ref={typedHelloSpanElement}
+          ></span>
+          👋🏻
+        </h2>
         <h1 className="text-3xl seq">I am Meherab Hossain</h1>
       </div>
       <p className="mb-4">
