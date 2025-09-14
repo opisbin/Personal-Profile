@@ -262,12 +262,12 @@ export const TIMELINE: Array<TimelineNodeV2> = [
   },
   {
     type: NodeTypes.CHECKPOINT,
-    title: "UI Engineer",
+    title: "Graduated in CSE",
     size: ItemSize.SMALL,
     subtitle:
-      "Contributed to Server driven UI framework for powering experiences @ Flipkart Wholesale 😎",
-    image: "/timeline/flipkart.svg",
-    slideImage: "/timeline/flipkart.gif",
+      "Completed CSE from Chongqing University of Science and Technology 😎",
+    image: "/timeline/cqust.png",
+    slideImage: "/timeline/grad.jpg",
     shouldDrawLine: true,
     alignment: Branch.LEFT,
   },

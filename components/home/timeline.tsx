@@ -62,7 +62,7 @@ const TimelineSection = ({ isDesktop }: IDesktop) => {
       (svg: string, node: LinkedTimelineNode) => {
         const { type, next } = node;
         let lineY = y;
-        let dotY = y + separation / 2;
+        let dotY = y + separation / 3;
 
         switch (type) {
           case NodeTypes.CHECKPOINT:
@@ -165,7 +165,7 @@ const TimelineSection = ({ isDesktop }: IDesktop) => {
 
     const titleSizeClass = size === ItemSize.LARGE ? "text-6xl" : "text-2xl";
     const logoString = image
-      ? `<img src='${image}' class='h-8 mb-2' loading='lazy' width='100' height='32' alt='${image}' />`
+      ? `<img src='${image}' class='h-16 mb-2 object-contain' loading='lazy' width='200' alt='${image}' />`
       : "";
     const subtitleString = subtitle
       ? `<p class='text-xl mt-2 text-gray-200 font-medium tracking-wide'>${subtitle}</p>`
@@ -468,7 +468,7 @@ const TimelineSection = ({ isDesktop }: IDesktop) => {
         src="/timeline/title-bar.svg"
         alt="Title bar"
         width={644}
-        height={34}
+        height={0}
       />
       <div className="relative h-full w-full -mt-2">
         <div className="absolute top-0 left-0 h-full w-full">
