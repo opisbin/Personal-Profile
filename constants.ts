@@ -248,7 +248,7 @@ export const TIMELINE: Array<TimelineNodeV2> = [
     size: ItemSize.SMALL,
     subtitle:
       "Worked as HR Manager and Interpreter at CEEC for Chinese clients",
-    image: "/timeline/Ceec.png",
+    image: "/timeline/ceec.png",
     slideImage: "/timeline/ceecb.jpeg",
     shouldDrawLine: true,
     alignment: Branch.LEFT,
