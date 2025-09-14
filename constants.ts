@@ -1,8 +1,6 @@
-// Copyright Ayush Singh 2021,2022. All Rights Reserved.
-// Project: folio
-// Author contact: https://www.linkedin.com/in/alphaayush/
-// This file is licensed under the MIT License.
-// License text available at https://opensource.org/licenses/MIT
+
+
+
 
 export const METADATA = {
   title: "Meherab Hossain - Portfolio",
@@ -74,12 +72,12 @@ export interface IProject {
 
 export const PROJECTS: IProject[] = [
   {
-    name: "FigGen - Figma to Code converter",
-    image: "/projects/figgen.jpg",
+    name: "AI Date planner | UX Case study",
+    image: "/projects/ai.png",
     blurImage: "/projects/blur/figgen-blur.jpg",
     description: "Pixel perfect HTML/Tailwind for Figma Auto layout designs.",
     gradient: ["#1F6582", "#1ABCFE"],
-    url: "https://www.figma.com/community/plugin/1065278044402066626",
+    url: "https://www.behance.net/gallery/229229673/AI-Date-planner-UX-Case-study",
     tech: ["typescript", "figma", "tailwind"],
   },
   // {
@@ -115,7 +113,7 @@ export const PROJECTS: IProject[] = [
     blurImage: "/projects/blur/ngx-quill-upload-blur.jpg",
     description: "NPM Package for Quill JS uploads from Angular",
     gradient: ["#3A0000", "#771E1E"],
-    url: "https://www.npmjs.com/package/ngx-quill-upload",
+    url: "#",
     tech: ["npm", "angular", "typescript"],
   },
   // {
@@ -169,7 +167,7 @@ export const PROJECTS: IProject[] = [
     blurImage: "/projects/blur/scrolls-blur.jpg",
     description: "Built the portal from zero to production 🚀",
     gradient: ["#685506", "#7B6921"],
-    url: "https://scrolls-17.ayushsingh.net/",
+    url: "#",
     tech: ["angular", "html", "css"],
   },
   // {
@@ -316,10 +314,10 @@ export const TIMELINE: Array<TimelineNodeV2> = [
   },
   {
     type: NodeTypes.CHECKPOINT,
-    title: "UX Engineer",
+    title: "Freelance Graphic Designer",
     size: ItemSize.SMALL,
     subtitle:
-      "First job! 🥳 Product design and development for employee engagement chatbot suite for workplace by facebook",
+      "First job! 🥳 Graphic design and Branding for humninos was my first ever IT job",
     image: "/timeline/huminos.svg",
     slideImage: "/timeline/huminos-website.jpg",
     shouldDrawLine: true,
