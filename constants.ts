@@ -38,9 +38,10 @@ export const TYPED_STRINGS = [
   "I design and develop things",
   "I develop modern frontend apps",
   "I design dynamic user experience",
-  "I design and develop motion",
+  "I design and develop emotion",
 ];
 export const TYPED_HELLO = [
+  "কি অবস্থা !",
   "Hello",
   "你好",
   "Hola",
